@@ -1,14 +1,16 @@
-# Mistik
+# Mistik · Release 3.1 definitiva
 
-Web oficial de Mistik.
+Web oficial bilingüe (castellà/català) preparada per publicar a GitHub Pages.
 
-## Archivos
+## Publicació
+Puja **el contingut d'aquesta carpeta** a l'arrel del repositori de GitHub Pages.
 
-- `index.html`: contenido de la web
-- `styles.css`: diseño y adaptación para móvil
-- `script.js`: menú, animaciones y selector ES/CAT
-- `images/`: fotografías y logotipo
+Inclou:
+- `index.html`
+- `styles.css`
+- `script.js`
+- carpeta `images/`
+- `.nojekyll`
+- codis QR de Mistik
 
-## Publicación
-
-Esta web está preparada para publicarse gratuitamente con GitHub Pages.
+Enllaços comercials principals: catàleg de WhatsApp Business.

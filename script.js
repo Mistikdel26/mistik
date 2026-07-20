@@ -1,40 +1,15 @@
-const menuToggle = document.querySelector(".menu-toggle");
-const nav = document.querySelector(".main-nav");
-
-menuToggle.addEventListener("click", () => {
-  const open = nav.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded", String(open));
-});
-
-document.querySelectorAll(".main-nav a").forEach(link => {
-  link.addEventListener("click", () => nav.classList.remove("open"));
-});
-
-const langButtons = document.querySelectorAll(".lang");
-const translatable = document.querySelectorAll("[data-es][data-ca]");
-
-function setLanguage(language) {
-  document.documentElement.lang = language;
-  translatable.forEach(element => {
-    element.textContent = element.dataset[language];
-  });
-  langButtons.forEach(button => {
-    button.classList.toggle("active", button.dataset.lang === language);
-  });
-  localStorage.setItem("mistik-language", language);
-}
-
-langButtons.forEach(button => {
-  button.addEventListener("click", () => setLanguage(button.dataset.lang));
-});
-
-setLanguage(localStorage.getItem("mistik-language") || "es");
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add("visible");
-  });
-}, { threshold: 0.12 });
-
-document.querySelectorAll(".reveal").forEach(element => observer.observe(element));
-document.getElementById("year").textContent = new Date().getFullYear();
+const phone = '34938310080';
+const translations = {
+ca: {
+nav_about:'Qui és Mistik',nav_custom:'Personalització',nav_catalog:'Catàleg',nav_ritual:'Ritualitzades',nav_events:'Convidats',nav_contact:'Contacte',hero_eyebrow:'Creacions artesanals · Fetes per a tu',hero_title:'Il·luminem moments. Creem records.',hero_text:'Espelmes, wax melts, bouquets i detalls elaborats a mà, amb cera de soja, cera d’abella i fragàncies certificades IFRA.',hero_catalog:'Veure el catàleg',hero_about:'Conèixer Mistik',hero_badge:'artesanal i personalitzable',trust_1_title:'Fet a mà',trust_1_text:'Cada peça es crea amb cura',trust_2_title:'Al teu gust',trust_2_text:'Color, aroma i presentació',trust_3_title:'Fragàncies IFRA',trust_3_text:'Qualitat i seguretat aromàtica',about_eyebrow:'Artesania amb ànima',about_title:'Qui és Mistik',about_text_1:'Mistik neix del desig de convertir la llum, les aromes i els petits detalls en records que perduren. Cada peça es crea a mà, amb temps, sensibilitat i una mirada molt personal.',about_text_2:'Treballem amb cera de soja, cera d’abella i fragàncies certificades IFRA per donar forma a espelmes, regals i composicions que acompanyen emocions, celebracions i moments quotidians.',about_text_3:'Perquè una espelma pot ser molt més que una espelma: pot guardar una història, dir gràcies, celebrar un vincle o fer que un instant se senti veritablement teu.',about_cta:'Descobreix tot el que podem crear per a tu →',custom_eyebrow:'La teva idea, feta aroma',custom_title:'Personalització sense límits',custom_text:'La majoria de les nostres creacions es poden adaptar a tu o a la teva celebració. Explica’ns què imagines i dissenyarem una proposta especial.',custom_li_1:'Aroma i combinació de fragàncies',custom_li_2:'Colors, formes i decoració',custom_li_3:'Etiquetes, embolcall i presentació',custom_li_4:'Casaments, batejos, comunions, aniversaris i empresa',custom_cta:'Explica’ns la teva idea →',catalog_eyebrow:'Col·leccions Mistik',catalog_title:'Un catàleg per regalar, decorar i gaudir',catalog_text:'Explora les nostres creacions i escriu-nos per WhatsApp per triar aroma, color i acabat.',cat_artisan:'Espelmes artesanals',cat_artisan_text:'Cera de soja i fragàncies certificades IFRA.',p_lavender:'Una espelma serena i delicada, creada per transformar qualsevol racó en un petit refugi de calma. Personalitzable en aroma, color i decoració.',p_watermelon_title:'Espelma Síndria',p_watermelon:'Una creació fresca, divertida i molt visual, elaborada artesanalment amb cera de soja. Pots escollir l’aroma i adaptar-ne els colors.',p_artisan_title:'Espelmes artesanals personalitzades',p_artisan:'Espelmes de cera de soja elaborades a mà en tons suaus i combinacions de color personalitzables. Pots escollir aroma, color i acabat per crear una peça completament al teu gust.',ask_info:'Demanar informació',cat_gourmet:'Espelmes gurmet',cat_gourmet_text:'Postres i begudes que semblen reals, però perfumen.',p_choco_title:'Xocolata',p_choco:'Una espelma dolça i acollidora, treballada a mà per recrear una deliciosa tassa de xocolata amb una presentació irresistible.',p_berries_title:'Fruits vermells',p_berries:'Inspirada en unes postres cremoses amb fruits vermells, combina detall artesanal, color i una presència que sorprèn abans d’encendre-la.',p_beer_title:'Gerra de cervesa',p_beer:'Una peça original i plena de personalitat, elaborada amb cera de soja i un acabat escumós que imita una autèntica gerra de cervesa.',p_jam_title:'Melmelada de fruits vermells',p_jam:'Cera de soja i cera de gel es combinen per aconseguir una textura translúcida i un acabat realista, presentat en un encantador pot de vidre.',cat_bouquets:'Bouquets d’espelmes i wax melts',cat_bouquets_text:'Composicions artesanals pensades per emocionar. Disponibles en mida mini, mitjana i gran, amb colors, aromes i decoració personalitzats.',design_bouquet:'Dissenyar el meu bouquet',cat_wax_text:'Petites peces aromàtiques per gaudir sense flama.',p_tasting_title:'Caixa degustació',p_tasting:'250 g i 16 aromes diferents per descobrir noves fragàncies. Tria pes, colors, formes i combinacions segons les teves preferències.',p_blister_title:'Blísters personalitzats',p_blister:'Una manera pràctica i bonica de perfumar la llar. Escull la teva fragància preferida i el color que més t’agradi.',p_mosquito_title:'Antimosquits',p_mosquito:'Wax melts aromàtics pensats per acompanyar les tardes i nits d’estiu, presentats en un delicat embolcall kraft.',burners_eyebrow:'Complements',burners_title:'Cremadors',burners_text:'Cremadors per gaudir dels teus wax melts, disponibles en diferents acabats i amb possibilitat de personalitzar-ne el color.',plaques_eyebrow:'Aroma decoratiu',plaques_title:'Plaques aromàtiques',plaques_text:'Personalitza color, fragància i decoració. Quan perdin intensitat, trenca-les a trossos i utilitza-les en un cremador per allargar-ne la vida.',ask_info_arrow:'Demanar informació →',cat_air:'Ambientadors',cat_air_text:'Aromes personalitzats per a casa i per al cotxe.',p_mikado:'Perfuma la llar de manera contínua i elegant. Personalitzable en color i fragància per integrar-se en qualsevol ambient.',p_car_title:'Ambientador de cotxe',p_car:'Un format compacte i bonic per portar el teu aroma preferit a cada trajecte. Tria el color i la fragància.',ritual_eyebrow:'Intenció i tradició',ritual_title:'Espelmes ritualitzades',ritual_text:'Creacions preparades artesanalment per acompanyar intencions personals. Escriu-nos i explica’ns què necessites.',r_bee_title:'Cera d’abella · 200 g',r_bee:'Elaborada amb cera d’abella 100% pura i ritualitzada amb herbes. Es personalitza completament segons el teu objectiu.',r_black_title:'Espelma ritual negra',r_black:'Una peça de caràcter intens, treballada artesanalment amb herbes i detalls daurats per a una intenció personalitzada.',r_soy_title:'Cirions ritualitzats de soja',r_soy:'Cirions de cera de soja elaborats artesanalment i ritualitzats amb herbes i decoració. Cada peça es personalitza segons la intenció i l’objectiu que vulguis treballar.',r_novena_title:'Novenes',r_novena:'Una col·lecció de novenes artesanals preparades amb intenció i cuidades fins a l’últim detall.',explain_need:'Explicar la meva necessitat',ritual_note:'Les espelmes ritualitzades són creacions simbòliques i no substitueixen l’atenció mèdica, psicològica, legal ni professional.',events_eyebrow:'Celebracions amb ànima',events_title:'Detalls personalitzats per a convidats',events_text:'Petits records aromàtics per a casaments, batejos, comunions, aniversaris i esdeveniments d’empresa. Adaptem colors, fragàncies, decoració i etiquetes.',e_bubble_title:'Bubble amb pa d’or',e_bubble:'Un detall elegant i contemporani, preparat artesanalment i personalitzat per harmonitzar amb l’estètica de la teva celebració.',e_flower_title:'Flor perfumada',e_hearts_title:'Bouquet de cors',e_bear_title:'Detall d’osset',events_cta:'Preparar la meva celebració',aromas_eyebrow:'Troba la teva essència',aromas_title:'Aromes disponibles',aromas_text:'Treballem amb una selecció canviant de fragàncies florals, dolces, fresques, afruitades, cítriques, especiades i enfustades. Escriu-nos per conèixer la carta actual i rebre una recomanació.',aromas_cta:'Consultar aromes',contact_eyebrow:'Parlem',contact_title:'Tens una idea especial?',contact_text:'Explica’ns quin producte t’agrada, per a quina ocasió el necessites i com l’imagines. Et respondrem personalment per crear la teva comanda.',contact_cta:'Veure el catàleg',closing_eyebrow:'Gràcies per confiar en l’artesania',closing_title:'Cada peça està creada per formar part dels teus moments més especials.',closing_text:'Fet artesanalment a Catalunya, amb dedicació, fragàncies escollides i el desig de crear alguna cosa que recordis.',footer_tagline:'Mistik · Artesania que il·lumina moments i crea records.',footer_rights:'Tots els drets reservats.'
+}}
+let currentLang='es';
+function setLanguage(lang){currentLang=lang;document.documentElement.lang=lang;document.querySelectorAll('[data-i18n]').forEach(el=>{const key=el.dataset.i18n;if(lang==='ca'&&translations.ca[key])el.textContent=translations.ca[key];else if(el.dataset.es)el.textContent=el.dataset.es;});document.querySelectorAll('[data-i18n]').forEach(el=>{if(!el.dataset.es)el.dataset.es=el.textContent});document.querySelectorAll('.lang').forEach(b=>b.classList.toggle('active',b.dataset.lang===lang));localStorage.setItem('mistik-lang',lang)}
+document.querySelectorAll('[data-i18n]').forEach(el=>el.dataset.es=el.textContent);
+document.querySelectorAll('.lang').forEach(btn=>btn.addEventListener('click',()=>setLanguage(btn.dataset.lang)));
+const catalogUrl='https://wa.me/c/34938310080';
+document.querySelectorAll('.whatsapp-link, .whatsapp-product, .catalog-link').forEach(link=>{link.href=catalogUrl;link.target='_blank';link.rel='noopener'});
+const toggle=document.querySelector('.menu-toggle'),nav=document.querySelector('.main-nav');toggle.addEventListener('click',()=>{const open=nav.classList.toggle('open');toggle.setAttribute('aria-expanded',String(open))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false')}));
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+document.getElementById('year').textContent=new Date().getFullYear();
+setLanguage(localStorage.getItem('mistik-lang')||'es');
