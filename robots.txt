@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://mistikdel26.github.io/mistik/sitemap.xml

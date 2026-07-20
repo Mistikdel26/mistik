@@ -1,0 +1,22 @@
+{
+  "name": "Mistik · Artesanía que ilumina momentos",
+  "short_name": "Mistik",
+  "description": "Velas artesanales, wax melts, bouquets, ambientadores y detalles personalizados.",
+  "start_url": "/mistik/",
+  "scope": "/mistik/",
+  "display": "standalone",
+  "background_color": "#f8f2ed",
+  "theme_color": "#6f5146",
+  "icons": [
+    {
+      "src": "images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
