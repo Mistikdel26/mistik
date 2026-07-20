@@ -13,3 +13,42 @@
 .closing-socials{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-top:38px}.closing-socials a{border:1px solid rgba(111,81,70,.24);border-radius:999px;padding:13px 20px;text-decoration:none;color:inherit}.closing-socials span{opacity:.68;margin-left:6px}
 .floating-whatsapp{width:auto;min-width:78px;padding:0 17px;border-radius:999px;font-size:.72rem;letter-spacing:.08em;text-transform:uppercase}
 @media(max-width:760px){.about-section{grid-template-columns:1fr;padding-top:50px}.about-mark{font-size:10rem}.closing-socials{flex-direction:column;align-items:center}}
+
+/* Release 3.2.1 — correcció d'imatges en dispositius mòbils */
+@media (max-width: 760px) {
+  .hero-image > img,
+  .custom-gallery img,
+  .custom-gallery .large,
+  .product-card img,
+  .split-image img,
+  .mini-gallery img,
+  .feature-card img,
+  .feature-card .burner-photo,
+  .horizontal-card img,
+  .ritual-card img,
+  .event-main img,
+  .event-small img,
+  .aromas-card img {
+    width: 100%;
+    height: auto;
+    min-height: 0;
+    max-height: none;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+  }
+
+  .custom-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+  }
+
+  .custom-gallery .large {
+    grid-row: auto;
+  }
+
+  .event-main,
+  .event-small article {
+    min-height: 0;
+  }
+}
