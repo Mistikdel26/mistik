@@ -70,3 +70,51 @@
   .burner-gallery{grid-template-rows:none;grid-template-columns:1fr}
   .feature-card .burner-gallery img{height:280px;min-height:0;max-height:280px;object-fit:contain;padding:8px}
 }
+
+/* v3.4.2 — Mostrar el producto completo en las fotografías del catálogo */
+.product-card img,
+.ritual-card img {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 5;
+  object-fit: contain;
+  object-position: center;
+  background: #f4eee7;
+  padding: 10px;
+}
+
+/* Evita recortes en las composiciones especiales del catálogo */
+.feature-card img,
+.horizontal-card img,
+.split-image img,
+.mini-gallery img {
+  object-fit: contain;
+  object-position: center;
+  background: #f4eee7;
+}
+
+/* Cremadores: ambas fotos completas y centradas */
+.feature-card .burner-gallery img {
+  object-fit: contain;
+  object-position: center;
+  background: #f4eee7;
+  padding: 10px;
+}
+
+/* Espelmes de mel decoratives i ritualitzades: peça completa */
+.bee-decor-card .bee-decor-photo,
+.ritual-honey-card .ritual-honey-photo {
+  object-fit: contain;
+  object-position: center;
+  background: #f4eee7;
+}
+
+@media (max-width: 760px) {
+  .product-card img,
+  .ritual-card img {
+    aspect-ratio: 4 / 5;
+    object-fit: contain;
+    object-position: center;
+    padding: 8px;
+  }
+}

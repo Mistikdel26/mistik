@@ -1,3 +1,6 @@
+## Actualització 3.4.2
+Fotografies del catàleg ajustades perquè es vegi el producte complet, sense retalls.
+
 # Mistik Web · Release 3.1 definitiva
 
 Web bilingüe (castellà/català) preparada per publicar a GitHub Pages.
