@@ -118,3 +118,77 @@
     padding: 8px;
   }
 }
+
+/* v3.4.3 — Cremadors amb més presència i bouquets sense grans franges buides */
+#bouquets.split-category{
+  grid-template-columns:1.12fr .88fr;
+  align-items:stretch;
+}
+#bouquets .split-image{
+  min-height:0;
+  background:#fff;
+}
+#bouquets .split-image img{
+  width:100%;
+  height:100%;
+  min-height:560px;
+  object-fit:cover;
+  object-position:center;
+  background:transparent;
+}
+#bouquets .mini-gallery{
+  align-items:stretch;
+}
+#bouquets .mini-gallery img{
+  width:100%;
+  height:260px;
+  aspect-ratio:auto;
+  object-fit:cover;
+  object-position:center;
+  background:transparent;
+}
+
+.burners-card{
+  grid-template-columns:1.35fr .65fr;
+  min-height:560px;
+}
+.burners-card .burner-gallery{
+  display:grid;
+  grid-template-rows:2fr 1fr;
+  gap:10px;
+  padding:12px;
+  min-height:560px;
+  background:#f4eee7;
+}
+.burners-card .burner-gallery .burner-main{
+  width:100%;
+  height:100%;
+  max-height:none;
+  min-height:360px;
+  object-fit:cover;
+  object-position:center 60%;
+  padding:0;
+  border-radius:8px;
+  background:transparent;
+}
+.burners-card .burner-gallery .burner-secondary{
+  width:100%;
+  height:100%;
+  max-height:none;
+  min-height:170px;
+  object-fit:cover;
+  object-position:center 58%;
+  padding:0;
+  border-radius:8px;
+  background:transparent;
+}
+
+@media(max-width:760px){
+  #bouquets.split-category{grid-template-columns:1fr}
+  #bouquets .split-image img{min-height:0;height:auto;object-fit:cover}
+  #bouquets .mini-gallery img{height:220px}
+  .burners-card{grid-template-columns:1fr;min-height:0}
+  .burners-card .burner-gallery{grid-template-rows:auto auto;min-height:0}
+  .burners-card .burner-gallery .burner-main{height:300px;min-height:0}
+  .burners-card .burner-gallery .burner-secondary{height:240px;min-height:0}
+}

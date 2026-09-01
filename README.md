@@ -28,3 +28,8 @@ Puja tot el contingut d’aquesta carpeta a l’arrel del repositori i activa Gi
 ## Actualització 3.4.1
 - Ajust de mida de les noves fotografies perquè el producte es vegi complet.
 - Correcció del text de l’espelma de mel ritualitzada en espiral.
+
+
+## Versió 3.4.3
+- Cremadors amb imatges més grans i amb més presència visual.
+- Bouquets amb menys espai buit i millor aprofitament de la fotografia.
