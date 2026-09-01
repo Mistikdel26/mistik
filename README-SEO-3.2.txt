@@ -13,3 +13,8 @@ URL oficial: https://mistikdel26.github.io/mistik/
 
 Publicación: sube todos los archivos y carpetas de esta carpeta a la raíz del repositorio GitHub mistik.
 Después envía sitemap.xml desde Google Search Console.
+
+ACTUALITZACIÓ 3.2.1
+- Corregida la visualització de les fotografies en pantalles mòbils.
+- Les imatges ara es mostren completes i centrades, sense retalls.
+- La versió d'ordinador no ha estat modificada.

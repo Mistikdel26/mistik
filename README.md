@@ -13,3 +13,10 @@ Web bilingüe (castellà/català) preparada per publicar a GitHub Pages.
 
 ## Publicació a GitHub Pages
 Puja tot el contingut d’aquesta carpeta a l’arrel del repositori i activa GitHub Pages des de la branca principal.
+
+
+## Actualización 3.4 · 31/08/2026
+- Nueva foto en Quemadores de Wax Melts.
+- Nueva sección Velas de miel decorativas.
+- Dos nuevas velas de miel ritualizadas.
+- SEO y Google Analytics conservados.
