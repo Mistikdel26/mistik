@@ -20,3 +20,8 @@ Puja tot el contingut d’aquesta carpeta a l’arrel del repositori i activa Gi
 - Nueva sección Velas de miel decorativas.
 - Dos nuevas velas de miel ritualizadas.
 - SEO y Google Analytics conservados.
+
+
+## Actualització 3.4.1
+- Ajust de mida de les noves fotografies perquè el producte es vegi complet.
+- Correcció del text de l’espelma de mel ritualitzada en espiral.
