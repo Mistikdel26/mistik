@@ -34,7 +34,7 @@ Puja tot el contingut d’aquesta carpeta a l’arrel del repositori i activa Gi
 - Cremadors amb imatges més grans i amb més presència visual.
 - Bouquets amb menys espai buit i millor aprofitament de la fotografia.
 
-## Actualización 3.5.1 · Especial Navidad
+## Actualización 3.5.2 · Especial Navidad
 - Foto añadida en “Quién es Mistik”.
 - Nueva sección “Especial Navidad”.
 - Nuevo subapartado “Detalles para empresas”.
